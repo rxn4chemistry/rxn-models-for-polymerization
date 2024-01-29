@@ -20,7 +20,7 @@ mkdir -p ./data/{input,hta-allCombinations,m2p-allCombinations}
 
 Download data from Zenodo for hta and m2p and move them to `./data/input/`.
 
-Run the preprocessing pipeline:
+Run the preprocessing pipeline (replace `/path/to` with the folder containing the cloned repo):
 
 ```console
 # TODO: retrieve configuration file and run data pipeline

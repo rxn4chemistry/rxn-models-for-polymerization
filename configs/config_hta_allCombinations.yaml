@@ -1,7 +1,7 @@
 data:
-  path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/input/hta_dataset_all_combinations.csv
+  path: /path/to/rxn-models-for-polymerization/data/input/hta_dataset_all_combinations.csv
   name: hta-allCombinations
-  proc_dir: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing
+  proc_dir: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing
 common:
   sequence:
   - IMPORT
@@ -13,8 +13,8 @@ common:
   fragment_bond: TILDE
   reaction_column_name: rxn_reaction_hta
 rxn_import:
-  input_file: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/input/hta_dataset_all_combinations.csv
-  output_csv: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.imported.csv
+  input_file: /path/to/rxn-models-for-polymerization/data/input/hta_dataset_all_combinations.csv
+  output_csv: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.imported.csv
   data_format: CSV
   input_csv_column_name: rxn_reaction_hta
   reaction_column_name: rxn_reaction_hta
@@ -23,16 +23,16 @@ rxn_import:
   column_for_light: null
   column_for_heat: null
 standardize:
-  input_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.imported.csv
+  input_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.imported.csv
   annotation_file_paths: []
   discard_unannotated_metals: false
-  output_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.standardized.csv
+  output_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.standardized.csv
   fragment_bond: TILDE
   reaction_column_name: rxn_reaction_hta
   remove_stereo_if_not_defined_in_precursors: false
 preprocess:
-  input_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.standardized.csv
-  output_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.csv
+  input_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.standardized.csv
+  output_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.csv
   min_reactants: 2
   max_reactants: 10
   max_reactants_tokens: 300
@@ -46,16 +46,16 @@ preprocess:
   fragment_bond: TILDE
   reaction_column_name: rxn_reaction_hta
 split:
-  input_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.csv
-  output_directory: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing
+  input_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.csv
+  output_directory: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing
   split_ratio: 0.05
   reaction_column_name: rxn_reaction_hta
   index_column: rxn_reaction_hta
   hash_seed: 42
   shuffle_seed: 42
 augment:
-  input_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.train.csv
-  output_file_path: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train.csv
+  input_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.train.csv
+  output_file_path: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train.csv
   tokenize: true
   random_type: unrestricted
   permutations: 1
@@ -64,13 +64,13 @@ augment:
   fragment_bond: TILDE
 tokenize:
   input_output_pairs:
-  - inp: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train.csv
-    out: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train
+  - inp: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train.csv
+    out: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.augmented.train
     reaction_column_name: rxn_reaction_hta
-  - inp: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.validation.csv
-    out: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.validation
+  - inp: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.validation.csv
+    out: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.validation
     reaction_column_name: rxn_reaction_hta
-  - inp: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.test.csv
-    out: /Users/tte/Code/open_source/rxn4chemistry/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.test
+  - inp: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.test.csv
+    out: /path/to/rxn-models-for-polymerization/data/rxn-preprocessing/hta-allCombinations.processed.test
     reaction_column_name: rxn_reaction_hta
   reaction_column_name: rxn_reaction_hta
